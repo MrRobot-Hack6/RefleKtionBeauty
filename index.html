@@ -268,9 +268,10 @@ footer { background-color: #4a2c2a; color: white; text-align: center; padding: 3
   <div class="booking-column">
     <h2>Book Your Appointment 📅</h2>
     <p>We’d love to pamper you! Please fill out the form below to book your beauty session.</p>
-    <form id="bookingForm" action="https://formspree.io/f/xblpvpzz" method="POST" class="booking-form">
+    <form id="bookingForm" action="send_booking.php" method="POST" class="booking-form">
       <input type="text" name="name" placeholder="Your Full Name ✨" required>
-      <input type="email" name="_replyto" placeholder="Your Email 📧" required>
+      <input type="email" name="email" placeholder="Your Email 📧" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number 📞" required>
       <select name="service" required>
         <option value="">Select a Service 🌸</option>
         <option>Permanent Makeup</option>
@@ -281,6 +282,7 @@ footer { background-color: #4a2c2a; color: white; text-align: center; padding: 3
         <option>Microneedling</option>
       </select>
       <input type="date" name="date" required>
+      <input type="time" name="time" required>
       <textarea name="message" rows="4" placeholder="Any special requests or notes 💕"></textarea>
       <button type="submit">Send Booking 💌</button>
       <p id="thankYouMessage" style="display:none; color:#d95f5f; font-weight:600; margin-top:15px;">
@@ -303,6 +305,32 @@ footer { background-color: #4a2c2a; color: white; text-align: center; padding: 3
 <footer>
   <p>© 2025 RefleKtion Beauty. All rights reserved.</p>
 </footer>
+
+<script>
+const form = document.getElementById('bookingForm');
+const thankYouMessage = document.getElementById('thankYouMessage');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData
+    });
+    const result = await response.text();
+    if(result === 'success'){
+      thankYouMessage.style.display = 'block';
+      form.reset();
+    } else {
+      alert('Error sending booking. Please try again.');
+    }
+  } catch(err){
+    alert('Error: ' + err.message);
+  }
+});
+</script>
 
 </body>
 </html>
