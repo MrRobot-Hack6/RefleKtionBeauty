@@ -90,44 +90,19 @@ h2 { text-align: center; color: #d95f5f; margin-bottom: 50px; font-size: 2.2em; 
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* ===== Booking Form ===== */
-.booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+/* ===== Contact Section ===== */
+.contact-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
-.booking-form input,
-.booking-form select,
-.booking-form textarea {
-    padding: 12px 15px;
-    border: 1px solid #f3b6c0;
-    border-radius: 10px;
-    font-size: 1em;
-    background: #fffafc;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
+.contact-info { flex: 1; min-width: 300px; padding: 30px; border-radius: 15px;
+  background: linear-gradient(135deg, #fff0f5 0%, #ffe6f0 100%);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
-.booking-form input:focus,
-.booking-form select:focus,
-.booking-form textarea:focus {
-    outline: none;
-    border-color: #ff7ba3;
-    box-shadow: 0 0 10px rgba(255,123,163,0.3);
-}
-.booking-form button {
-    background: linear-gradient(45deg, #f58529, #dd2a7b, #515bd4);
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 1.1em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.booking-form button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(221,42,123,0.4);
-}
+.contact-info p, .contact-info .instagram-inline { margin-bottom: 15px; }
 
 /* ===== Instagram Link ===== */
 .instagram-inline { margin-top: 25px; font-size: 1.05em; display: flex; justify-content: center; align-items: center; gap: 8px; }
@@ -171,23 +146,6 @@ h2 { text-align: center; color: #d95f5f; margin-bottom: 50px; font-size: 2.2em; 
     100% { box-shadow: 0 0 15px rgba(221,42,123,0.3), 0 0 30px rgba(245,133,41,0.2); }
 }
 
-/* ===== Contact Section ===== */
-.contact-container {
-  display: flex;
-  gap: 50px;
-  max-width: 1100px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-.contact-info, .booking-column { flex: 1; min-width: 300px; }
-.contact-info {
-  padding: 30px;
-  border-radius: 15px;
-  background: linear-gradient(135deg, #fff0f5 0%, #ffe6f0 100%);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-}
-.contact-info p, .contact-info .instagram-inline { margin-bottom: 15px; }
-
 /* ===== Footer ===== */
 footer { background-color: #4a2c2a; color: white; text-align: center; padding: 30px 20px; }
 
@@ -215,7 +173,7 @@ footer { background-color: #4a2c2a; color: white; text-align: center; padding: 3
 <ul>
 <li><a href="#services">Services 💖</a></li>
 <li><a href="#gallery">Gallery 📸</a></li>
-<li><a href="#contact">Book Now 📅</a></li>
+<li><a href="#contact">Contact 📩</a></li>
 </ul>
 </nav>
 </header>
@@ -247,7 +205,6 @@ footer { background-color: #4a2c2a; color: white; text-align: center; padding: 3
 <section id="contact">
 <h2>Contact Us 📩</h2>
 <div class="contact-container">
-  <!-- Left Column -->
   <div class="contact-info">
     <p><strong>Email:</strong> <a href="mailto:Kayleighnieuwoudt831@gmail.com">Kayleighnieuwoudt831@gmail.com</a></p>
     <p><strong>Phone:</strong> <a href="tel:+27651137748">+27 65 113 7748</a></p>
@@ -262,33 +219,6 @@ footer { background-color: #4a2c2a; color: white; text-align: center; padding: 3
         Instagram
       </a>
     </p>
-  </div>
-
-  <!-- Right Column -->
-  <div class="booking-column">
-    <h2>Book Your Appointment 📅</h2>
-    <p>We’d love to pamper you! Please fill out the form below to book your beauty session.</p>
-    <form id="bookingForm" action="send_booking.php" method="POST" class="booking-form">
-      <input type="text" name="name" placeholder="Your Full Name ✨" required>
-      <input type="email" name="email" placeholder="Your Email 📧" required>
-      <input type="tel" name="phone" placeholder="Your Phone Number 📞" required>
-      <select name="service" required>
-        <option value="">Select a Service 🌸</option>
-        <option>Permanent Makeup</option>
-        <option>Lash Extensions</option>
-        <option>Facials</option>
-        <option>Chemical Peels</option>
-        <option>Fibroblasting</option>
-        <option>Microneedling</option>
-      </select>
-      <input type="date" name="date" required>
-      <input type="time" name="time" required>
-      <textarea name="message" rows="4" placeholder="Any special requests or notes 💕"></textarea>
-      <button type="submit">Send Booking 💌</button>
-      <p id="thankYouMessage" style="display:none; color:#d95f5f; font-weight:600; margin-top:15px;">
-        💖 Thank you! Your booking has been sent successfully. We’ll be in touch soon! 🌸
-      </p>
-    </form>
   </div>
 </div>
 </section>
@@ -306,34 +236,9 @@ footer { background-color: #4a2c2a; color: white; text-align: center; padding: 3
   <p>© 2025 RefleKtion Beauty. All rights reserved.</p>
 </footer>
 
-<script>
-const form = document.getElementById('bookingForm');
-const thankYouMessage = document.getElementById('thankYouMessage');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: formData
-    });
-    const result = await response.text();
-    if(result === 'success'){
-      thankYouMessage.style.display = 'block';
-      form.reset();
-    } else {
-      alert('Error sending booking. Please try again.');
-    }
-  } catch(err){
-    alert('Error: ' + err.message);
-  }
-});
-</script>
-
 </body>
 </html>
+
 
 
 
