@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RefleKtion Beauty ✨🌺</title>
 
-    <!-- ===== Favicons for multiple devices ===== -->
-    <link rel="icon" type="image/png" sizes="16x16" href="logo-1.png">
+    <!-- ===== Favicons ===== -->
     <link rel="icon" type="image/png" sizes="32x32" href="logo-1.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="logo-1.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="logo-1.png">
     <link rel="apple-touch-icon" sizes="180x180" href="logo-1.png">
-    <link rel="shortcut icon" href="logo-1.png">
 
     <style>
         /* ===== General Styles ===== */
@@ -120,7 +116,6 @@
             border-radius: 15px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
         }
 
         .service:hover {
@@ -137,8 +132,6 @@
             color: #555;
             font-size: 1em;
         }
-
-        
 
         /* ===== Gallery ===== */
         .gallery-grid {
@@ -176,6 +169,67 @@
             content: "💌 ";
         }
 
+        .instagram-inline {
+            margin-top: 15px;
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .instagram-link {
+            color: #d95f5f;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            color: #ff7ba3;
+            transform: scale(1.05);
+        }
+
+        /* ===== Floating Instagram Button ===== */
+        .floating-instagram {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(45deg, #f58529, #dd2a7b, #515bd4);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(221, 42, 123, 0.4);
+            z-index: 1000;
+            animation: glowPulse 3s ease-in-out infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .floating-instagram:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(221, 42, 123, 0.6);
+        }
+
+        .floating-instagram svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        @keyframes glowPulse {
+            0% {
+                box-shadow: 0 0 15px rgba(221, 42, 123, 0.3),
+                            0 0 30px rgba(245, 133, 41, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(221, 42, 123, 0.6),
+                            0 0 40px rgba(245, 133, 41, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(221, 42, 123, 0.3),
+                            0 0 30px rgba(245, 133, 41, 0.2);
+            }
+        }
+
         /* ===== Footer ===== */
         footer {
             background-color: #4a2c2a;
@@ -209,6 +263,13 @@
                 flex-direction: column;
                 gap: 10px;
             }
+
+            .floating-instagram {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
@@ -216,7 +277,7 @@
 
     <header>
         <div class="logo">
-            <img src="logo-1.png"  alt="RefleKtion Beauty Logo" class="logo-img">
+            <img src="logo-1.png" alt="RefleKtion Beauty Logo" class="logo-img">
             RefleKtion Beauty ✨
         </div>
         <nav>
@@ -235,35 +296,16 @@
 
     <section id="services">
         <h2>Our Services ✨</h2>
-        <div class="service">
-            <h3>🌸Permanent Makeup💄</h3>
-            <p>Enhance your natural beauty with precise, long-lasting makeup solutions, including eyebrows, eyeliner, and lips.</p>
-        </div>
-        <div class="service">
-            <h3>🌸Lash Extensions👁️</h3>
-            <p>Get fuller, longer, and defined lashes for an effortlessly glamorous look that enhances your eyes.</p>
-        </div>
-        <div class="service">
-            <h3>🌸Facials🧖‍♀️</h3>
-            <p>Rejuvenate and refresh your skin with customized facials that cleanse, hydrate, and leave your skin glowing.</p>
-        </div>
-        <div class="service">
-            <h3>🌸Chemical Peels🍑</h3>
-            <p>Improve skin texture, tone, and clarity with safe and effective chemical peels tailored to your skin type.</p>
-        </div>
-        <div class="service">
-            <h3>🌸Fibroblasting ✨</h3>
-            <p>Tighten and lift your skin with fibroblasting, a non-surgical treatment to restore youthful firmness.</p>
-        </div>
-        <div class="service">
-            <h3>🌸Microneedling 🌟</h3>
-            <p>Boost collagen and improve skin elasticity with microneedling, reducing scars, fine lines, and wrinkles.</p>
-        </div>
+        <div class="service"><h3>🌸Permanent Makeup💄</h3><p>Enhance your natural beauty with precise, long-lasting makeup solutions, including eyebrows, eyeliner, and lips.</p></div>
+        <div class="service"><h3>🌸Lash Extensions 👁️</h3><p>Get fuller, longer, and defined lashes for an effortlessly glamorous look that enhances your eyes.</p></div>
+        <div class="service"><h3>🌸Facials 🧖‍♀️</h3><p>Rejuvenate and refresh your skin with customized facials that cleanse, hydrate, and leave your skin glowing.</p></div>
+        <div class="service"><h3>🌸Chemical Peels🍑</h3><p>Improve skin texture, tone, and clarity with safe and effective chemical peels tailored to your skin type.</p></div>
+        <div class="service"><h3>🌸Fibroblasting✨</h3><p>Tighten and lift your skin with fibroblasting, a non-surgical treatment to restore youthful firmness.</p></div>
+        <div class="service"><h3>🌸Microneedling🌟</h3><p>Boost collagen and improve skin elasticity with microneedling, reducing scars, fine lines, and wrinkles.</p></div>
     </section>
 
     <section id="gallery">
         <h2>Gallery 📸</h2>
-        
         <div class="gallery-grid">
             <img src="kay-4.png" alt="Service 1">
             <img src="kay-1.png" alt="Service 2">
@@ -276,7 +318,26 @@
         <p>Email: Kayleighnieuwoudt831@gmail.com</p>
         <p>Phone: +27 65 113 7748</p>
         <p>Address: Krugersdorp, Tarlton</p>
+
+        <p class="instagram-inline">
+            📸 Follow us on 
+            <a href="https://www.instagram.com/reflektionbeauty63?igsh=NG1ka3N5a3Y4dm10" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                Instagram
+            </a>
+        </p>
     </section>
+
+    <!-- Floating Instagram Button -->
+    <a href="https://www.instagram.com/reflektionbeauty63?igsh=NG1ka3N5a3Y4dm10" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="floating-instagram" 
+       aria-label="Visit RefleKtion Beauty on Instagram">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M349.33 69.33H162.67C110.93 69.33 69.33 110.93 69.33 162.67v186.67c0 51.74 41.6 93.33 93.33 93.33h186.67c51.74 0 93.33-41.6 93.33-93.33V162.67c0-51.74-41.6-93.33-93.33-93.33zm64 280c0 35.29-28.71 64-64 64H162.67c-35.29 0-64-28.71-64-64V162.67c0-35.29 28.71-64 64-64h186.67c35.29 0 64 28.71 64 64v186.67z" fill="#fff"/>
+            <path d="M256 164.27a91.73 91.73 0 1 0 91.73 91.73A91.84 91.84 0 0 0 256 164.27zm0 150.4a58.67 58.67 0 1 1 58.67-58.67A58.74 58.74 0 0 1 256 314.67zM370.67 142.93a21.33 21.33 0 1 1-21.33-21.33 21.36 21.36 0 0 1 21.33 21.33z" fill="#fff"/>
+        </svg>
+    </a>
 
     <footer>
         <p>© 2025 RefleKtion Beauty 🌺✨ All rights reserved.</p>
@@ -284,6 +345,7 @@
 
 </body>
 </html>
+
 
 
 
