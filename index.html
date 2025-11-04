@@ -1,347 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RefleKtion Beauty ✨🌺</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RefleKtion Beauty ✨🌺</title>
 
-    <!-- ===== Favicons ===== -->
-    <link rel="icon" type="image/png" sizes="32x32" href="logo-1.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="logo-1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="logo-1.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logo-1.png">
 
-    <style>
-        /* ===== General Styles ===== */
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(180deg, #fffaf2 0%, #ffe6f0 100%);
-        }
+<style>
+/* ===== General Styles ===== */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(180deg, #fffaf2 0%, #ffe6f0 100%);
+}
+a { text-decoration: none; color: inherit; }
+h1,h2,h3 { margin: 0 0 15px 0; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+/* ===== Header ===== */
+header {
+    background-color: #ffffffcc;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo { display: flex; align-items: center; gap: 10px; font-size: 1.8em; font-weight: bold; color: #4a2c2a; }
+.logo-img { width: 40px; height: auto; object-fit: contain; border-radius: 5px; }
+nav ul { list-style: none; display: flex; gap: 30px; }
+nav a { font-weight: 500; color: #4a2c2a; transition: color 0.3s ease; }
+nav a:hover { color: #d95f5f; }
 
-        h1, h2, h3 {
-            margin: 0 0 15px 0;
-        }
+/* ===== Hero Section ===== */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/hibiscus-hero.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+.hero h1 { font-size: 3em; font-weight: 700; }
+.hero p { font-size: 1.2em; max-width: 650px; margin: 20px auto 0 auto; }
 
-        /* ===== Header ===== */
-        header {
-            background-color: #ffffffcc;
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #e0e0e0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/* ===== Section Styles ===== */
+section { padding: 80px 20px; }
+h2 { text-align: center; color: #d95f5f; margin-bottom: 50px; font-size: 2.2em; font-weight: 600; }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #4a2c2a;
-        }
+/* ===== Services ===== */
+.service {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px 40px;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe6f0 100%);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.service h3 { color: #d95f5f; font-size: 1.5em; }
+.service p { color: #555; font-size: 1em; }
 
-        .logo-img {
-            width: 40px;
-            height: auto;
-            object-fit: contain;
-            border-radius: 5px;
-        }
+/* ===== Gallery ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-grid img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
+/* ===== Booking Form ===== */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #f3b6c0;
+    border-radius: 10px;
+    font-size: 1em;
+    background: #fffafc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    outline: none;
+    border-color: #ff7ba3;
+    box-shadow: 0 0 10px rgba(255,123,163,0.3);
+}
+.booking-form button {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #515bd4);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.booking-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(221,42,123,0.4);
+}
 
-        nav a {
-            font-weight: 500;
-            color: #4a2c2a;
-            transition: color 0.3s ease;
-        }
+/* ===== Instagram Link ===== */
+.instagram-inline { margin-top: 25px; font-size: 1.05em; display: flex; justify-content: center; align-items: center; gap: 8px; }
+.instagram-link {
+    color: #d95f5f;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.instagram-link svg { width: 20px; height: 20px; fill: #d95f5f; transition: fill 0.3s ease; }
+.instagram-link:hover { color: #ff7ba3; transform: scale(1.05); }
+.instagram-link:hover svg { fill: #ff7ba3; }
 
-        nav a:hover {
-            color: #d95f5f;
-        }
+/* ===== Floating Instagram Button ===== */
+.floating-instagram {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #515bd4);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(221, 42, 123, 0.4);
+    z-index: 1000;
+    animation: glowPulse 3s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.floating-instagram:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(221, 42, 123, 0.6);
+}
+.floating-instagram svg { width: 32px; height: 32px; fill: white; }
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 15px rgba(221,42,123,0.3), 0 0 30px rgba(245,133,41,0.2); }
+    50% { box-shadow: 0 0 25px rgba(221,42,123,0.6), 0 0 40px rgba(245,133,41,0.4); }
+    100% { box-shadow: 0 0 15px rgba(221,42,123,0.3), 0 0 30px rgba(245,133,41,0.2); }
+}
 
-        /* ===== Hero Section ===== */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/hibiscus-hero.jpg') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-        }
+/* ===== Contact Section ===== */
+.contact-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.contact-info, .booking-column { flex: 1; min-width: 300px; }
+.contact-info {
+  padding: 30px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #fff0f5 0%, #ffe6f0 100%);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+.contact-info p, .contact-info .instagram-inline { margin-bottom: 15px; }
 
-        .hero h1 {
-            font-size: 3em;
-            font-weight: 700;
-        }
+/* ===== Footer ===== */
+footer { background-color: #4a2c2a; color: white; text-align: center; padding: 30px 20px; }
 
-        .hero p {
-            font-size: 1.2em;
-            max-width: 650px;
-            margin: 20px auto 0 auto;
-        }
-
-        /* ===== Section Styles ===== */
-        section {
-            padding: 80px 20px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #d95f5f;
-            margin-bottom: 50px;
-            font-size: 2.2em;
-            font-weight: 600;
-        }
-
-        /* ===== Services ===== */
-        .service {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px 40px;
-            background: linear-gradient(135deg, #fff0f5 0%, #ffe6f0 100%);
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .service h3 {
-            color: #d95f5f;
-            font-size: 1.5em;
-        }
-
-        .service p {
-            color: #555;
-            font-size: 1em;
-        }
-
-        /* ===== Gallery ===== */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-grid img:hover {
-            transform: scale(1.05) rotate(1deg);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        /* ===== Contact ===== */
-        #contact {
-            text-align: center;
-            color: #555;
-        }
-
-        #contact p {
-            margin: 10px 0;
-            font-size: 1.05em;
-        }
-
-        #contact p::before {
-            content: "💌 ";
-        }
-
-        .instagram-inline {
-            margin-top: 15px;
-            font-size: 1.05em;
-            color: #555;
-        }
-
-        .instagram-link {
-            color: #d95f5f;
-            font-weight: 600;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .instagram-link:hover {
-            color: #ff7ba3;
-            transform: scale(1.05);
-        }
-
-        /* ===== Floating Instagram Button ===== */
-        .floating-instagram {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: linear-gradient(45deg, #f58529, #dd2a7b, #515bd4);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 20px rgba(221, 42, 123, 0.4);
-            z-index: 1000;
-            animation: glowPulse 3s ease-in-out infinite;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .floating-instagram:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(221, 42, 123, 0.6);
-        }
-
-        .floating-instagram svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
-        }
-
-        @keyframes glowPulse {
-            0% {
-                box-shadow: 0 0 15px rgba(221, 42, 123, 0.3),
-                            0 0 30px rgba(245, 133, 41, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 25px rgba(221, 42, 123, 0.6),
-                            0 0 40px rgba(245, 133, 41, 0.4);
-            }
-            100% {
-                box-shadow: 0 0 15px rgba(221, 42, 123, 0.3),
-                            0 0 30px rgba(245, 133, 41, 0.2);
-            }
-        }
-
-        /* ===== Footer ===== */
-        footer {
-            background-color: #4a2c2a;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        /* ===== Responsive ===== */
-        @media(max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .hero h1 {
-                font-size: 2.2em;
-            }
-
-            .hero p {
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .service {
-                padding: 20px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .floating-instagram {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-    </style>
+/* ===== Responsive ===== */
+@media(max-width:768px){
+    header{ flex-direction: column; gap:15px; }
+    .hero h1{ font-size:2.2em; }
+    .hero p{ font-size:1em; }
+    .contact-container { flex-direction: column; gap: 30px; }
+}
+@media (max-width:480px){
+    .service{ padding:20px; }
+    nav ul{ flex-direction: column; gap:10px; }
+    .floating-instagram{ width:50px; height:50px; bottom:20px; right:20px; }
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="logo-1.png" alt="RefleKtion Beauty Logo" class="logo-img">
-            RefleKtion Beauty ✨
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#services">Services 💖</a></li>
-                <li><a href="#gallery">Gallery 📸</a></li>
-                <li><a href="#contact">Contact 📩</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+<div class="logo">
+<img src="logo-1.png" alt="RefleKtion Beauty Logo" class="logo-img"> RefleKtion Beauty ✨
+</div>
+<nav>
+<ul>
+<li><a href="#services">Services 💖</a></li>
+<li><a href="#gallery">Gallery 📸</a></li>
+<li><a href="#contact">Book Now 📅</a></li>
+</ul>
+</nav>
+</header>
 
-    <section class="hero">
-        <h1>RefleKtion Beauty 🌺</h1>
-        <p>Where elegance meets excitement! Professional beauty services with a fun, vibrant twist. Let your beauty bloom! 🌸✨</p>
-    </section>
+<section class="hero">
+<h1>RefleKtion Beauty 🌺</h1>
+<p>Where elegance meets excitement! Professional beauty services with a fun, vibrant twist. Let your beauty bloom! 🌸✨</p>
+</section>
 
-    <section id="services">
-        <h2>Our Services ✨</h2>
-        <div class="service"><h3>🌸Permanent Makeup💄</h3><p>Enhance your natural beauty with precise, long-lasting makeup solutions, including eyebrows, eyeliner, and lips.</p></div>
-        <div class="service"><h3>🌸Lash Extensions 👁️</h3><p>Get fuller, longer, and defined lashes for an effortlessly glamorous look that enhances your eyes.</p></div>
-        <div class="service"><h3>🌸Facials 🧖‍♀️</h3><p>Rejuvenate and refresh your skin with customized facials that cleanse, hydrate, and leave your skin glowing.</p></div>
-        <div class="service"><h3>🌸Chemical Peels🍑</h3><p>Improve skin texture, tone, and clarity with safe and effective chemical peels tailored to your skin type.</p></div>
-        <div class="service"><h3>🌸Fibroblasting✨</h3><p>Tighten and lift your skin with fibroblasting, a non-surgical treatment to restore youthful firmness.</p></div>
-        <div class="service"><h3>🌸Microneedling🌟</h3><p>Boost collagen and improve skin elasticity with microneedling, reducing scars, fine lines, and wrinkles.</p></div>
-    </section>
+<section id="services">
+<h2>Our Services ✨</h2>
+<div class="service"><h3>🌸Permanent Makeup💄</h3><p>Enhance your natural beauty with precise, long-lasting makeup solutions, including eyebrows, eyeliner, and lips.</p></div>
+<div class="service"><h3>🌸Lash Extensions 👁️</h3><p>Get fuller, longer, and defined lashes for an effortlessly glamorous look that enhances your eyes.</p></div>
+<div class="service"><h3>🌸Facials 🧖‍♀️</h3><p>Rejuvenate and refresh your skin with customized facials that cleanse, hydrate, and leave your skin glowing.</p></div>
+<div class="service"><h3>🌸Chemical Peels🍑</h3><p>Improve skin texture, tone, and clarity with safe and effective chemical peels tailored to your skin type.</p></div>
+<div class="service"><h3>🌸Fibroblasting✨</h3><p>Tighten and lift your skin with fibroblasting, a non-surgical treatment to restore youthful firmness.</p></div>
+<div class="service"><h3>🌸Microneedling🌟</h3><p>Boost collagen and improve skin elasticity with microneedling, reducing scars, fine lines, and wrinkles.</p></div>
+</section>
 
-    <section id="gallery">
-        <h2>Gallery 📸</h2>
-        <div class="gallery-grid">
-            <img src="kay-4.png" alt="Service 1">
-            <img src="kay-1.png" alt="Service 2">
-            <img src="kay-7.png" alt="Service 3">
-        </div>
-    </section>
+<section id="gallery">
+<h2>Gallery 📸</h2>
+<div class="gallery-grid">
+<img src="kay-4.png" alt="Service 1">
+<img src="kay-1.png" alt="Service 2">
+<img src="kay-7.png" alt="Service 3">
+</div>
+</section>
 
-    <section id="contact">
-        <h2>Contact Us 📩</h2>
-        <p>Email: Kayleighnieuwoudt831@gmail.com</p>
-        <p>Phone: +27 65 113 7748</p>
-        <p>Address: Krugersdorp, Tarlton</p>
-
-        <p class="instagram-inline">
-            📸 Follow us on 
-            <a href="https://www.instagram.com/reflektionbeauty63?igsh=NG1ka3N5a3Y4dm10" target="_blank" rel="noopener noreferrer" class="instagram-link">
-                Instagram
-            </a>
-        </p>
-    </section>
-
-    <!-- Floating Instagram Button -->
-    <a href="https://www.instagram.com/reflektionbeauty63?igsh=NG1ka3N5a3Y4dm10" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="floating-instagram" 
-       aria-label="Visit RefleKtion Beauty on Instagram">
+<section id="contact">
+<h2>Contact Us 📩</h2>
+<div class="contact-container">
+  <!-- Left Column -->
+  <div class="contact-info">
+    <p><strong>Email:</strong> <a href="mailto:Kayleighnieuwoudt831@gmail.com">Kayleighnieuwoudt831@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+27651137748">+27 65 113 7748</a></p>
+    <p><strong>Address:</strong> Krugersdorp, Tarlton</p>
+    <p class="instagram-inline">
+      <a href="https://www.instagram.com/reflektionbeauty63?igsh=NG1ka3N5a3Y4dm10" target="_blank" rel="noopener noreferrer" class="instagram-link">
         <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-            <path d="M349.33 69.33H162.67C110.93 69.33 69.33 110.93 69.33 162.67v186.67c0 51.74 41.6 93.33 93.33 93.33h186.67c51.74 0 93.33-41.6 93.33-93.33V162.67c0-51.74-41.6-93.33-93.33-93.33zm64 280c0 35.29-28.71 64-64 64H162.67c-35.29 0-64-28.71-64-64V162.67c0-35.29 28.71-64 64-64h186.67c35.29 0 64 28.71 64 64v186.67z" fill="#fff"/>
-            <path d="M256 164.27a91.73 91.73 0 1 0 91.73 91.73A91.84 91.84 0 0 0 256 164.27zm0 150.4a58.67 58.67 0 1 1 58.67-58.67A58.74 58.74 0 0 1 256 314.67zM370.67 142.93a21.33 21.33 0 1 1-21.33-21.33 21.36 21.36 0 0 1 21.33 21.33z" fill="#fff"/>
+          <path d="M349.33 69.33H162.67C113.29 69.33 69.33 113.29 69.33 162.67v186.67c0 49.38 43.96 93.34 93.34 93.34h186.66c49.38 0 93.34-43.96 93.34-93.34V162.67c0-49.38-43.96-93.34-93.34-93.34zM464 349.33c0 63.62-51.71 115.33-115.33 115.33H162.67C99.04 464.67 47.33 412.96 47.33 349.33V162.67C47.33 99.04 99.04 47.33 162.67 47.33h186.66C412.29 47.33 464 99.04 464 162.67v186.66z"/>
+          <path d="M256 164c-51.91 0-94 42.09-94 94s42.09 94 94 94 94-42.09 94-94-42.09-94-94-94zm0 152c-31.57 0-58-26.43-58-58s26.43-58 58-58 58 26.43 58 58-26.43 58-58 58z"/>
+          <circle cx="390.5" cy="121.5" r="17.5"/>
         </svg>
-    </a>
+        Instagram
+      </a>
+    </p>
+  </div>
 
-    <footer>
-        <p>© 2025 RefleKtion Beauty 🌺✨ All rights reserved.</p>
-    </footer>
+  <!-- Right Column -->
+  <div class="booking-column">
+    <h2>Book Your Appointment 📅</h2>
+    <p>We’d love to pamper you! Please fill out the form below to book your beauty session.</p>
+    <form id="bookingForm" action="https://formspree.io/f/xblpvpzz" method="POST" class="booking-form">
+      <input type="text" name="name" placeholder="Your Full Name ✨" required>
+      <input type="email" name="_replyto" placeholder="Your Email 📧" required>
+      <select name="service" required>
+        <option value="">Select a Service 🌸</option>
+        <option>Permanent Makeup</option>
+        <option>Lash Extensions</option>
+        <option>Facials</option>
+        <option>Chemical Peels</option>
+        <option>Fibroblasting</option>
+        <option>Microneedling</option>
+      </select>
+      <input type="date" name="date" required>
+      <textarea name="message" rows="4" placeholder="Any special requests or notes 💕"></textarea>
+      <button type="submit">Send Booking 💌</button>
+      <p id="thankYouMessage" style="display:none; color:#d95f5f; font-weight:600; margin-top:15px;">
+        💖 Thank you! Your booking has been sent successfully. We’ll be in touch soon! 🌸
+      </p>
+    </form>
+  </div>
+</div>
+</section>
+
+<!-- Floating Instagram Button -->
+<a href="https://www.instagram.com/reflektionbeauty63?igsh=NG1ka3N5a3Y4dm10" target="_blank" rel="noopener noreferrer" class="floating-instagram" aria-label="Visit RefleKtion Beauty on Instagram">
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <path d="M349.33 69.33H162.67C113.29 69.33 69.33 113.29 69.33 162.67v186.67c0 49.38 43.96 93.34 93.34 93.34h186.66c49.38 0 93.34-43.96 93.34-93.34V162.67c0-49.38-43.96-93.34-93.34-93.34zM464 349.33c0 63.62-51.71 115.33-115.33 115.33H162.67C99.04 464.67 47.33 412.96 47.33 349.33V162.67C47.33 99.04 99.04 47.33 162.67 47.33h186.66C412.29 47.33 464 99.04 464 162.67v186.66z"/>
+  <path d="M256 164c-51.91 0-94 42.09-94 94s42.09 94 94 94 94-42.09 94-94-42.09-94-94-94zm0 152c-31.57 0-58-26.43-58-58s26.43-58 58-58 58 26.43 58 58-26.43 58-58 58z"/>
+  <circle cx="390.5" cy="121.5" r="17.5"/>
+</svg>
+</a>
+
+<footer>
+  <p>© 2025 RefleKtion Beauty. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
